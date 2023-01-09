@@ -1,23 +1,37 @@
 <!DOCTYPE html>
-<html>
-  <head>
-  <title>Line Notify連結</title>
-  <meta charset="utf-8" />
-  <input type="text" placeholder="請輸入姓名：" id="myInput">
+<html lang="en">
+<head>
+  <title>CEDNotify</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <script>
-      function Auth() {
-      var inputVal = document.getElementById("myInput").value;
-      var URL = 'https://notify-bot.line.me/oauth/authorize?';
-      URL += 'response_type=code';
-      URL += '&client_id=cHRhi0kKZcz5pzBTQeKfJl';
-      URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbyDRq9UmfjDr7EfGioVYOBQF3oogff_B3FgNoAD88fF9JbMHBVJSIuXtfyz6YDQuxqe9w/exec';
-      URL += '&scope=notify';
-      URL += '&state=' + inputVal;
-      window.location.href = URL;
-  }
-  </script>
-  </head>
-  <body>
-      <button onclick="Auth();">點選這裡連結到LineNotify</button>
-  </body>
+        function Auth() {
+            var inputVal = document.getElementById("myInput").value;
+
+            var URL = 'https://notify-bot.line.me/oauth/authorize?';
+            URL += 'response_type=code';
+            URL += '&client_id=cHRhi0kKZcz5pzBTQeKfJl';
+            URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbyDRq9UmfjDr7EfGioVYOBQF3oogff_B3FgNoAD88fF9JbMHBVJSIuXtfyz6YDQuxqe9w/exec'; 
+            URL += '&scope=notify';
+            URL += '&state=' + inputVal;
+            window.location.href = URL;
+        }
+    </script>
+</head>
+<body>
+
+<div class="container">
+  <form>
+    <div class="form-group">
+      <h1><label for="myInput">請輸入姓名:</label></h1>
+      <input type="text" class="form-control" id="myInput">
+    </div>
+  </form>
+  <button onclick="Auth();" type="button" class="btn btn-primary btn-lg">點選這裡連結LineNotify</button>
+</div>
+
+</body>
 </html>
