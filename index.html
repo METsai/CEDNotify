@@ -10,14 +10,15 @@
   <script>
         function Auth() {
             var inputVal = document.getElementById("myInput").value;
+            var clientid = 'cHRhi0kKZcz5pzBTQeKfJl'
 
             var URL = 'https://notify-bot.line.me/oauth/authorize?';
             URL += 'response_type=code';
-            URL += '&client_id=cHRhi0kKZcz5pzBTQeKfJl';
+            URL += '&client_id=' + clientid; //cHRhi0kKZcz5pzBTQeKfJl';
             URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbyDRq9UmfjDr7EfGioVYOBQF3oogff_B3FgNoAD88fF9JbMHBVJSIuXtfyz6YDQuxqe9w/exec'; 
             URL += '&scope=notify';
             URL += '&state=' + inputVal;
-            URL += '&client_id=cHRhi0kKZcz5pzBTQeKfJl';
+            URL += '&clientid=' + clientid;
             window.location.href = URL;
         }
     </script>
