@@ -17,7 +17,7 @@
             URL += '&client_id=' + clientid; //cHRhi0kKZcz5pzBTQeKfJl';
             URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbzwT48SCQjlCWn5YEYHhVbfeA2nuL9oxhGmzPDQnZIgqACCvwhZE2KLcxEmQUcUqk4yZA/exec'; 
             URL += '?&scope=notify';
-            URL += '&state=' + inputVal + ',' + clientid;
+            URL += '&state=' + inputVal + clientid;
             window.location.href = URL;
         }
     </script>
@@ -26,10 +26,8 @@
 
 <div class="container">
   <form>
-    <div class="form-group">
       <h1><label for="myInput">請輸入姓名name:</label></h1>
-      <input type="text" class="form-control" id="myInput">
-    </div>
+      <input type="text" id="myInput">
   </form>
   <button onclick="Auth();" type="button" >點選這裡連結LineNotify</button>
 </div>
