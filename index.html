@@ -3,8 +3,34 @@
 <head>
   <title>CEDNotify</title>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script>
+        function Auth() {
+            var inputVal = document.getElementById("myInput").value;
+            var clientid = 'cHRhi0kKZcz5pzBTQeKfJl'
+
+            var URL = 'https://notify-bot.line.me/oauth/authorize?';
+            URL += 'response_type=code';
+            URL += '&client_id=' + clientid; //cHRhi0kKZcz5pzBTQeKfJl';
+            URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbzwT48SCQjlCWn5YEYHhVbfeA2nuL9oxhGmzPDQnZIgqACCvwhZE2KLcxEmQUcUqk4yZA/exec'; 
+            URL += '?&scope=notify';
+            URL += '&state=' + inputVal + clientid;
+            window.location.href = URL;
+        }
+    </script>
 </head>
 <body>
+
+<div class="container">
+  <form>
+      <h1><label for="myInput">請輸入姓名name:</label></h1>
+      <input type="text" id="myInput">
+  </form>
+  <button onclick="Auth();" type="button" >點選這裡連結LineNotify</button>
+</div>
 
 </body>
 </html>
