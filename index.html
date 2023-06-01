@@ -10,6 +10,7 @@
   <script>
         function Auth() {
             var inputVal = document.getElementById("myInput").value;
+            var inputVal2 = document.getElementById("myInput2").value;
             var clientid = 'cHRhi0kKZcz5pzBTQeKfJl'
 
             var URL = 'https://notify-bot.line.me/oauth/authorize?';
@@ -17,7 +18,7 @@
             URL += '&client_id=' + clientid; //cHRhi0kKZcz5pzBTQeKfJl';
             URL += '&redirect_uri=https://script.google.com/macros/s/AKfycbzwT48SCQjlCWn5YEYHhVbfeA2nuL9oxhGmzPDQnZIgqACCvwhZE2KLcxEmQUcUqk4yZA/exec'; 
             URL += '?&scope=notify';
-            URL += '&state=' + inputVal + "," + clientid;
+            URL += '&state=' + inputVal + "," + clientid + "," + inputVal2;
             window.location.href = URL;
         }
     </script>
@@ -29,6 +30,8 @@
     <div class="form-group">
       <h1><label for="myInput">請輸入姓名:</label></h1>
       <input type="text" class="form-control" id="myInput">
+      <h1><label for="myInput2">請輸入ID:</label></h1>
+      <input type="text" class="form-control" id="myInput2">
     </div>
   </form>
   <button onclick="Auth();" type="button" class="btn btn-primary btn-lg">點選這裡連結LineNotify</button>
